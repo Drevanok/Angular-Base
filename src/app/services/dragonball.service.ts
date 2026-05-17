@@ -11,7 +11,7 @@ const loadFromLocalStorage = (): Character[] => {
 export class DragonballService {
 
     characters = signal<Character[]>(loadFromLocalStorage());
-
+    
     saveToLocalStorage = effect(() => {
         localStorage.setItem('characters', JSON.stringify(this.characters()));
     })
